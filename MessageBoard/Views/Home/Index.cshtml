@@ -7,18 +7,18 @@
 @section Scripts{
     <script src="~/js/home-Index.js"></script>
 }
-<div data-ng-controller="homeIndexController">
+<div data-ng-controller="HomeIndexController as homeIndexController">
     <div class="message-header">
         <h1>Message Board</h1>
         <p class="lead">Latest Message ...</p>
-        <div>Message Count : {{data.length}}</div>
+        <div>Message Count : {{homeIndexController.data.length}}</div>
     </div>
 
-    <div class="progress progress-striped active" data-ng-show="isBusy">
+    <div class="progress progress-striped active" data-ng-show="homeIndexController.isBusy">
         <div class="bar" style="width:100%;"></div>
     </div>
     <div class="messages">
-        <div class="message row" data-ng-repeat="i in data">
+        <div class="message row" data-ng-repeat="i in homeIndexController.data">
             <div class="title span10">{{i.title}}</div>
             <div class="date span2">{{i.created | date:"medium"}}</div>
             <div class="contents span12">{{i.body}}</div>
